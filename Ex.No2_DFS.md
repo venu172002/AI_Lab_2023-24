@@ -1,5 +1,5 @@
 # Ex.No: 2  Implementation of Depth First Search
-### DATE: 17.02.24                                                                           
+### DATE: 26/03/2025                                                                           
 ### REGISTER NUMBER : 212221060304
 ### AIM: 
 To write a python program to implement Depth first Search. 
@@ -12,32 +12,31 @@ To write a python program to implement Depth first Search.
 6. Call the dfs function by passing arguments visited, graph and starting node.
 7. Stop the program.
 ### Program:
-```
-graph = {
-'1' : ['2','3'],
-'2' : ['4', '5'],
-'3' : ['6','7'],
-'4' : [],
-'5' : [],
-'6' : [],
-'7' : []
-}
-visited = set() # Set to keep track of visited nodes of graph.
-def dfs(visited, graph, node):  #function for dfs 
-    if node not in visited:
+
+    # Using a python dictionary to act as an adjacent list
+      graph = { 
+         '5' : ['3','7'],
+         '3' : ['2','4'],
+         '7' : ['8'],
+         '2' : [],
+         '4' : ['8'],
+         '8' : []
+      }
+      visited = set() # Set to Keep of visited nodes of graph.
+   
+    def dfs(visited, graph, node): #function for dfs
+          if node not in visited:
         print(node)
         visited.add(node)
         for neighbour in graph[node]:
             dfs(visited, graph, neighbour)
-# Driver Code
-print("Following is the Depth-First Search")
-dfs(visited, graph, '1')
-```
+      # Driver Code
+      print("Following is the Depth-First Search")
+      dfs(visited, graph, '5')
 
 ### Output:
-![image](https://github.com/venu172002/AI_Lab_2023-24/assets/160317774/c83dd9b6-92a3-4715-9507-a117a890c8ed)
 
-
+![image](https://github.com/user-attachments/assets/b3352b0e-6a2f-4977-b448-db8f7a58fe1d)
 
 
 ### Result:
