@@ -1,6 +1,6 @@
 # Ex.No: 1  Implementation of Breadth First Search 
-### DATE:17.02.24                                                                            
-### REGISTER NUMBER :212221060304 
+### DATE:  26/03/2025                                                                        
+### REGISTER NUMBER : 212221060304
 ### AIM: 
 To write a python program to implement Breadth first Search. 
 ### Algorithm:
@@ -13,36 +13,44 @@ To write a python program to implement Breadth first Search.
 7.   Call the bfs function by passing arguments visited, graph and starting node.
 8.   Stop the program.
 ### Program:
-```
-graph = {
-'1' : ['2','3'],
-'2' : ['4', '5'],
-'3' : ['6','7'],
-'4' : [],
-'5' : [],
-'6' : [],
-'7' : []
-}
-visited = [] # List for visited nodes.
-queue = []     #Initialize a queue
-def bfs(visited, graph, node): #function for BFS
+
+     graph = {
+      '2': ['3', '4'],
+      '3': ['5'],
+      '4': ['6', '7'],
+      '6': [],
+      '5': ['6'],
+       '7': ['8'],
+      '8': []
+    }
+
+    visited = []  # List for visited nodes.
+    queue = []    # Initialize a queue
+
+    def bfs(visited, graph, node):  # Function for BFS
     visited.append(node)
     queue.append(node)
-    while queue:          # Creating loop to visit each node
-        m = queue.pop(0) 
-        print (m) 
+
+    while queue:  # Creating loop to visit each node
+        m = queue.pop(0)
+        print(m, end=" ")
+
         for neighbour in graph[m]:
             if neighbour not in visited:
                 visited.append(neighbour)
                 queue.append(neighbour)
 
-# Driver Code
-print("Following is the Breadth-First Search")
-bfs(visited, graph, '1')    # function calling
-```
+    # Driver Code
+    print("BFS order is")
+    bfs(visited, graph, '2')
+
+
 ### Output:
 
-![image](https://github.com/venu172002/AI_Lab_2023-24/assets/160317774/092fce99-8aa5-4974-97c7-9459a9efefcb)
+![image](https://github.com/user-attachments/assets/81aacbb9-39d9-4aa9-98bb-e99d6c4f6ade)
+
+
+
 
 ### Result:
 Thus the breadth first search order was found sucessfully.
